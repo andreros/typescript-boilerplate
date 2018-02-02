@@ -1,0 +1,23 @@
+{
+    "name": "typescript-boilerplate",
+    "version": "0.0.1",
+    "description": "DESC",
+    "repository": "REPO",
+    "license": "LICENSE",
+    "main": "index.js",
+    "scripts": {
+        "dev": "gulp serve"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "browser-sync": "^2.23.6",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^4.1.0",
+        "gulp-hb": "^7.0.1",
+        "gulp-sass": "^3.1.0",
+        "gulp-sourcemaps": "^2.6.4",
+        "normalize-scss": "^7.0.1",
+        "tslint": "^5.9.1",
+        "typescript": "^2.6.2"
+    }
+}
