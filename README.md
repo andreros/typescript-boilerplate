@@ -16,14 +16,14 @@ project from scratch. If you are planning to do so, please take a look at the
 
 ## Installation
 
-Clone or download this project and from the main directory run the command ```npm install```, assuming you have 
+Clone or download this project. From the project directory run the command ```npm install```, assuming you have 
 [Node.js](https://nodejs.org/en/download/) installed. 
 
 
 ### Local Development
 
-To run the project in development mode, run the command ```npm run dev```. Your default browser should open a window with
-the project running from [__http://localhost:3000/__](http://localhost:3000/).
+To run the project in development mode, from the project directory run the command ```npm run dev```. Your default 
+browser should open a window with the project running from [http://localhost:3000/](http://localhost:3000/).
 
 
 ## License
