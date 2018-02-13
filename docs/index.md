@@ -6,4 +6,4 @@ Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML t
 
 
 
-[Documentation markup examples](examples).
+[Documentation markup examples](examples.md).
