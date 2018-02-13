@@ -16,15 +16,31 @@ project from scratch. If you are planning to do so, please take a look at the
 
 ## Installation
 
-Clone or download this project. From the project directory run the command ```npm install```, assuming you have 
+Clone or download this project. From the project directory run the command `npm install`, assuming you have 
 [Node.js](https://nodejs.org/en/download/) installed. 
 
 
-### Local Development
+## Local Development
 
-To run the project in development mode, from the project directory run the command ```npm run dev```. Your default 
+To run the project in development mode, from the project directory run the command `npm run dev`. Your default 
 browser should open a window with the project running from [http://localhost:3000/](http://localhost:3000/).
 
+## Author
+
+**André Rosa**
+
+* <https://bitbucket.org/candrelsrosa>
+* <https://github.com/andreros/>
+* <https://facebook.com/candrelsrosa>
+* <https://twitter.com/candrelsrosa>
+
+## Contributing
+
+1. Fork this project: [https://github.com/andreros/typescript-boilerplate/fork](https://github.com/andreros/typescript-boilerplate/fork) 
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
 ## License
 
