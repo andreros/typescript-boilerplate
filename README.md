@@ -10,7 +10,7 @@ all the needed dependencies and specificities, as well as, have a ready-to-go so
 
 This project also intends to be a comprehensive guide to anyone wanting to follow the same path and assemble his own 
 project from scratch. If you are planning to do so, please take a look at the 
-[project documentation](https://github.com/andreros/typescript-boilerplate).
+[project documentation](https://andreros.github.io/typescript-boilerplate/).
 
 ### Installation
 
