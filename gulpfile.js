@@ -6,9 +6,14 @@
  */
 const gulp = require('gulp'),
     fs = require('fs'),
+    rimraf = require('rimraf'),
 
     // TypeScript Linter
-    tslint = require('gulp-tslint'),
+    gulpTslint = require('gulp-tslint'),
+    tslint = require('tslint'),
+
+    // TypeScript
+    ts = require('gulp-typescript'),
 
     // SASS
     sourcemaps = require('gulp-sourcemaps'),
@@ -25,21 +30,34 @@ const DIST_FOLDER = './dist';
 const SRC_FOLDER = './src';
 
 /**
+ * Clean task.
+ * This task is responsible for removing the whole 'dist' folder before making a new build.
+ */
+gulp.task('clean', function(callback) {
+    rimraf(DIST_FOLDER, {}, callback);
+});
+
+/**
  * Typescript Lint task.
  * This task is responsible for linting the application TS (Typescript) files for errors.
  */
-gulp.task('tslint', function () {
+gulp.task('ts:lint', function () {
+    var program = tslint.Linter.createProgram("tsconfig.json");
     gulp.src([ SRC_FOLDER + '/**/*.ts' ])
-        .pipe(tslint({ formatter: 'verbose' }))
-        .pipe(tslint.report());
+        .pipe(gulpTslint({ program: program, formatter: 'verbose' }))
+        .pipe(gulpTslint.report());
 });
 
 /**
  * Compile Typescript task.
  * This task is responsible for transpiling the application TS (Typescript) into regular Javascript.
  */
-gulp.task('compile:typescript', function () {
-    // TODO: Compile typescript
+gulp.task('ts:compile', function () {
+    var tsProject = ts.createProject('tsconfig.json');
+    return gulp.src(SRC_FOLDER + '/**/*.ts')
+        .pipe(tsProject())
+        .js
+        .pipe(gulp.dest(DIST_FOLDER));
 });
 
 /**
@@ -86,21 +104,59 @@ gulp.task('build:html', function () {
 });
 
 /**
+ * Build main task.
+ * This task is responsible for gathering all the subtasks involved in the building process and launch them in parallel.
+ */
+gulp.task('build', [ 'ts:lint', 'ts:compile', 'copy:images', 'build:scss', 'build:html' ]);
+
+/**
+ * Serve task.
+ * This task is responsible for launching Browser Sync and setting up watchers over the file types involved in the
+ * development process. If any changes are detected in one of those files, the build process is triggered and finally,
+ * Browser Sync reloads the application in all opened browsers.
+ */
+gulp.task('serve', function() {
+    // make sure the application is built before launching
+    fs.stat(DIST_FOLDER + '/index.html', function(err) {
+        if (!err) {
+            browserSync.init({
+                server: {
+                    baseDir: DIST_FOLDER,
+                    index: 'index.html'
+                }
+            });
+            // listen for changes in the following file types
+            gulp.watch(SRC_FOLDER + '/**/*.ts', [ 'ts:lint', 'ts:compile' ]);
+            gulp.watch(SRC_FOLDER + '/**/*.scss', [ 'build:scss' ]);
+            gulp.watch(SRC_FOLDER + '/**/*.hbs', [ 'build:html' ]);
+            gulp.watch(SRC_FOLDER + '/**/*.html', [ 'build:html' ]);
+            gulp.watch([ DIST_FOLDER + '/*.js', DIST_FOLDER + '/*.html', DIST_FOLDER + '/*.css' ]).on('change', browserSync.reload);
+        } else {
+            // detect specific errors
+            switch (err.code) {
+                case 'ENOENT':
+                    console.log('\x1b[31mGulp "serve" task error\x1b[0m: There is no build available. ' +
+                        'Please, run the command \x1b[32mgulp build\x1b[0m before starting the server' +
+                        'or simply \x1b[32mgulp\x1b[0m.\n');
+                    break;
+                default:
+                    console.log('\x1b[31mGulp "serve" task error\x1b[0m: Unknown error. Details: ', err);
+                    break;
+            }
+        }
+
+    });
+});
+
+/**
  * Default task.
  * This task is responsible for bundling and running all tasks associated with the production of the application
  * in a distributable format. This task also starts the application server in development mode.
  */
-gulp.task('default', [ 'tslint', 'compile:typescript', 'copy:images', 'build:scss', 'build:html' ], function () {
-    browserSync.init({
-        server: {
-            baseDir: DIST_FOLDER,
-            index: 'index.html'
-        }
+gulp.task('default', ['clean'], function() {
+    gulp.task('build:serve', [ 'ts:lint', 'ts:compile', 'copy:images', 'build:scss', 'build:html' ], function() {
+        gulp.start('serve');
     });
-    // listen for changes in the following file types
-    gulp.watch(SRC_FOLDER + '/**/*.ts', [ 'tslint', 'compile:typescript' ]);
-    gulp.watch(SRC_FOLDER + '/**/*.scss', [ 'build:scss' ]);
-    gulp.watch(SRC_FOLDER + '/**/*.hbs', [ 'build:html' ]);
-    gulp.watch(SRC_FOLDER + '/**/*.html', [ 'build:html' ]);
-    gulp.watch([ DIST_FOLDER + '/*.js', DIST_FOLDER + '/*.html', DIST_FOLDER + '/*.css' ]).on('change', browserSync.reload);
+    gulp.start('build:serve');
 });
+

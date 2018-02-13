@@ -1,4 +1,4 @@
-export class Component1 {
+export default class Component1 {
 
     private greeting: string;
 
