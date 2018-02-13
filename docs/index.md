@@ -9,14 +9,15 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 *  [Creating a TypeScript project from scratch](#creating-project)
 
 
-## [To Do / Roadmap](#roadmap)
+## <a name="roadmap"></a>To Do / Roadmap
 
 1. Gulp task: Compile all Typescript files into one single file.
 1. Gulp task: Create a Gulp Minify task (Thanks to [HugoGon](https://github.com/HugoGon) recommendation).
 1. Gulp task: Read multiple JSON files into one central JSON file.
+1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
 
 
-## [Creating a TypeScript project from scratch](#creating-project)
+## <a name="creating-project"></a>Creating a TypeScript project from scratch
 
 First of all, we assume you already have installed [Node.js](https://nodejs.org/en/download/) in your computer, as well 
 as, your favourite browser and your favourite text editor or IDE.
@@ -38,7 +39,7 @@ this file from the project root folder.
 
 Create a file `package.json` in the root directory of the project. Edit the file and add the following:
 
-```
+```json
 {
     "name": "typescript-boilerplate",
     "version": "0.0.1",
