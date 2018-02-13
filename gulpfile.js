@@ -53,6 +53,7 @@ gulp.task('ts:lint', function () {
  * This task is responsible for transpiling the application TS (Typescript) into regular Javascript.
  */
 gulp.task('ts:compile', function () {
+    // TODO: Compile all TypeScript files into one (index.js) JavaScript file.
     var tsProject = ts.createProject('tsconfig.json');
     return gulp.src(SRC_FOLDER + '/**/*.ts')
         .pipe(tsProject())
@@ -89,7 +90,7 @@ gulp.task('build:scss', function () {
  * This task is responsible for compiling Handlebars templates into HTML.
  */
 gulp.task('build:html', function () {
-    // TODO: Read multiple JSON files
+    // TODO: Read multiple JSON files into one central JSON file.
     var content = fs.readFileSync(SRC_FOLDER + '/index.json');
     var templateData = JSON.parse(content);
 
