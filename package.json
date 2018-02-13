@@ -1,9 +1,7 @@
 {
     "name": "typescript-boilerplate",
-    "version": "0.0.1",
-    "description": "DESC",
-    "repository": "REPO",
-    "license": "LICENSE",
+    "version": "0.0.3",
+    "description": "Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML templating.",
     "main": "index.js",
     "scripts": {
         "dev": "gulp default"
@@ -22,5 +20,18 @@
         "rimraf": "^2.6.2",
         "tslint": "^5.9.1",
         "typescript": "^2.6.2"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andreros/typescript-boilerplate"
+    },
+    "keywords": [
+        "boilerplate",
+        "typescript",
+        "SASS",
+        "handlebars"
+    ],
+    "author": "André Rosa <andreros@gmail.com>",
+    "contributors": [],
+    "license": "Unlicense"
 }
