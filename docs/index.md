@@ -1,28 +1,33 @@
-### Documentation
+# Documentation
 
 Documentation for the Typescript Boilerplate project. [Documentation markup examples](examples.md).
 
 
-### Table of Contents
+## Table of Contents
 
 *  [To Do / Roadmap](#roadmap)
 *  [Creating a TypeScript project from scratch](#creating-project)
 
 
-### [](#roadmap)To Do / Roadmap
+## [](#roadmap)To Do / Roadmap
 
 1. Gulp task: Compile all Typescript files into one single file.
 1. Gulp task: Create a Gulp Minify task (Thanks to [HugoGon](https://github.com/HugoGon) recommendation).
 1. Gulp task: Read multiple JSON files into one central JSON file.
 
 
-### [](#creating-project)Creating a TypeScript project from scratch
+## [](#creating-project)Creating a TypeScript project from scratch
 
 First of all, we assume you already have installed [Node.js](https://nodejs.org/en/download/) in your computer, as well 
 as, your favourite browser and your favourite text editor or IDE.
 
-1. Create a new folder for your project or a new empty project in your IDE. The project name for this example will be 
-`typescript-boilerplate`. 
+1. ### Project Initial Setup
+
+    Create a new folder for your project or a new empty project in your IDE. The project name for this example will be 
+    `typescript-boilerplate`. 
+
+
+2. ### The First Project File 
 
     Now that we have an initial directory, what is the first file we should create for our project?
     
@@ -30,8 +35,8 @@ as, your favourite browser and your favourite text editor or IDE.
     `package.json`. The `package.json` file is responsible for gathering all the relevant information about the project.
     Furthermore, many modern dependency managers (such as npm, composer, gradle, homebrew and so many others) try to read 
     this file from the project root folder.
-
-2. Create a file `package.json` in the root directory of the project. Edit the file and add the following:
+    
+    Create a file `package.json` in the root directory of the project. Edit the file and add the following:
 
     ```
     {
