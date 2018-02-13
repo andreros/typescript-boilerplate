@@ -7,11 +7,15 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 
 *  [To Do / Roadmap](#roadmap)
 *  [Creating a TypeScript project from scratch](#creating-project)
+    *  [Project Initial Setup](#creating-project-1)
+    *  [The First Project File](#creating-project-2)
+    *  [Dependencies](#creating-project-3)
 
 
 ## <a name="roadmap"></a>To Do / Roadmap
 
 1. Gulp task: Compile all Typescript files into one single file.
+1. Gulp task: Create a Gulp Uglify task.
 1. Gulp task: Create a Gulp Minify task (Thanks to [HugoGon](https://github.com/HugoGon) recommendation).
 1. Gulp task: Read multiple JSON files into one central JSON file.
 1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
@@ -22,13 +26,13 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 First of all, we assume you already have installed [Node.js](https://nodejs.org/en/download/) in your computer, as well 
 as, your favourite browser and text editor or IDE.
 
-### 1 - Project Initial Setup
+### <a name="creating-project-1">1 - Project Initial Setup
 
 Create a new empty project in your IDE and give it a suitable name. The name used  for the project in this documentation 
 will be `typescript-boilerplate`. 
 
 
-### 2 - The First Project File 
+### <a name="creating-project-2">2 - The First Project File 
 
 Now that we have our empty project created, what is the first file we should create in it?
 
@@ -70,7 +74,7 @@ all dependencies listed here will be installed.
 * `devDependencies`: Similarly to the `dependencies` property, this property holds a list of all the project dependencies
 used in development. When the project is installed for development, all dependencies listed here will be installed.
 
-### 3 - Dependencies
+### <a name="creating-project-3">3 - Dependencies
 
 Since our project is a TypeScript boilerplate, the following dependencies are the ones needed for the development of 
 such project. Therefore, we will be focusing on the development dependencies rather than the distribution ones.
@@ -98,15 +102,22 @@ such project. Therefore, we will be focusing on the development dependencies rat
 }
 ```
 
-* `browser-sync`: Keep multiple browsers & devices in sync when building websites. For further details, please visit 
-[https://github.com/BrowserSync/browser-sync](https://github.com/BrowserSync/browser-sync).
+* `browser-sync`: Plugin to keep multiple browsers & devices in sync when building websites. For further details, 
+please visit [https://github.com/BrowserSync/browser-sync](https://github.com/BrowserSync/browser-sync).
 * `gulp`: Toolkit that helps you automate painful or time-consuming tasks in your development workflow. For further 
 details, please visit [https://github.com/gulpjs/gulp](https://github.com/gulpjs/gulp). 
-* `gulp-autoprefixer`:
-* `gulp-hb`:
-* `gulp-sass`:
-* `gulp-sourcemaps`:
-* `gulp-tslint`:
+* `gulp-autoprefixer`: Plugin to parse CSS and add vendor prefixes to CSS rules using values from 
+[Can I Use](https://caniuse.com/). It is [recommended](https://developers.google.com/web/tools/setup/setup-buildtools#dont_trip_up_with_vendor_prefixes) 
+by Google and used in Twitter and Taobao. For further details, please visit 
+[https://github.com/sindresorhus/gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer).
+* `gulp-hb`: A sane Gulp plugin to compile Handlebars templates. Useful as a static site generator. For further details, 
+please visit [https://github.com/shannonmoeller/gulp-hb](https://github.com/shannonmoeller/gulp-hb).
+* `gulp-sass`: Sass plugin for Gulp. For further details, please visit 
+[https://github.com/dlmanning/gulp-sass](https://github.com/dlmanning/gulp-sass).
+* `gulp-sourcemaps`: Source map support for Gulp. For further details, please visit 
+[https://github.com/gulp-sourcemaps/gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps).
+* `gulp-tslint`: TypeScript linter plugin for Gulp. For further detials, please visit 
+[https://github.com/panuhorsmalahti/gulp-tslint](https://github.com/panuhorsmalahti/gulp-tslint).
 * `gulp-typescript`:
 * `normalize-scss`:
 * `rimraf`:
