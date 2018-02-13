@@ -2,7 +2,7 @@
     "name": "typescript-boilerplate",
     "version": "0.0.3",
     "description": "Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML templating.",
-    "main": "index.js",
+    "main": "index.html",
     "scripts": {
         "dev": "gulp default"
     },
