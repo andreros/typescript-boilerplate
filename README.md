@@ -2,6 +2,7 @@
 
 Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML templating.
 
+
 ## Motivation
 
 In a fast evolving tech world, it is vital to keep up the pace. The creation of this boilerplate project comes both from 
@@ -12,9 +13,17 @@ This project also intends to be a comprehensive guide to anyone wanting to follo
 project from scratch. If you are planning to do so, please take a look at the 
 [project documentation](https://andreros.github.io/typescript-boilerplate/).
 
-### Installation
 
-Clone or download this project and from the main directory run the command ```npm install```. 
+## Installation
+
+Clone or download this project and from the main directory run the command ```npm install```, assuming you have 
+[Node.js](https://nodejs.org/en/download/) installed. 
+
+
+### Local Development
+
+To run the project in development mode, run the command ```npm run dev```. Your default browser should open a window with
+the project running from [__http://localhost:3000/__](http://localhost:3000/).
 
 
 ## License
