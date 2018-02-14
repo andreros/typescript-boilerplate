@@ -1,6 +1,6 @@
 # Documentation
 
-Documentation for the Typescript Boilerplate project. [Documentation markup examples](examples.md).
+Documentation for the Typescript Boilerplate project. [Documentation markup examples](examples.html).
 
 
 ## Table of Contents
@@ -10,7 +10,7 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 *  [1 - Project Initial Setup](#initial-setup)
 *  [2 - The First Project File](#first-file)
 *  [3 - Dependencies](#dependencies)
-*  [4 - Project File Structure](chapter2.md#file-structure)
+*  [4 - Project File Structure](chapter2.html#file-structure)
 
 
 ## To Do / Roadmap <a name="roadmap"></a>
@@ -151,4 +151,4 @@ Now that our `package.json` file is in place, from the project directory run the
 the needed project dependencies. Notice the newly created directory `node_modules` inside the project directory.
 
 
-### Next: [4 - Project File Structure](chapter2.md#file-structure)
+### Next: [4 - Project File Structure](chapter2.html#file-structure)
