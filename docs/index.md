@@ -26,7 +26,7 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 First of all, we assume you already have installed [Node.js](https://nodejs.org/en/download/) in your computer, as well 
 as, your favourite browser and text editor or IDE.
 
-### <a name="creating-project-1">1 - Project Initial Setup
+### 1 - Project Initial Setup <a name="creating-project-1">
 
 Create a new empty project in your IDE and give it a suitable name. The name used  for the project in this documentation 
 will be `typescript-boilerplate`. 
