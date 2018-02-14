@@ -114,6 +114,33 @@ end
 <dd>Green</dd>
 </dl>
 
+
+### File / Folder Structure
+
+```
+├── dir1
+│   ├── file11.ext
+│   └── file12.ext
+├── dir2
+│   ├── file21.ext
+│   ├── file22.ext
+│   └── file23.ext
+├── dir3
+│   ├── dir31
+│   │   ├── file311.ext
+│   │   ├── file322.ext
+│   │   ├── file323.ext
+│   │   ├── file324.ext
+│   │   └── wiki.py
+│   └── README.md
+├── dir4
+├── file_in_root.ext
+├── configure
+├── configure.in
+└── README.md
+```
+
+
 ```
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 ```
