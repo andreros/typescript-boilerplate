@@ -102,27 +102,34 @@ such project. Therefore, we will be focusing on the development dependencies rat
 }
 ```
 
-* `browser-sync`: Plugin to keep multiple browsers & devices in sync when building websites. For further details, 
-please visit [https://github.com/BrowserSync/browser-sync](https://github.com/BrowserSync/browser-sync).
-* `gulp`: Toolkit that helps you automate painful or time-consuming tasks in your development workflow. For further 
-details, please visit [https://github.com/gulpjs/gulp](https://github.com/gulpjs/gulp). 
-* `gulp-autoprefixer`: Plugin to parse CSS and add vendor prefixes to CSS rules using values from 
-[Can I Use](https://caniuse.com/). It is [recommended](https://developers.google.com/web/tools/setup/setup-buildtools#dont_trip_up_with_vendor_prefixes) 
-by Google and used in Twitter and Taobao. For further details, please visit 
-[https://github.com/sindresorhus/gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer).
-* `gulp-hb`: A sane Gulp plugin to compile Handlebars templates. Useful as a static site generator. For further details, 
-please visit [https://github.com/shannonmoeller/gulp-hb](https://github.com/shannonmoeller/gulp-hb).
-* `gulp-sass`: Sass plugin for Gulp. For further details, please visit 
-[https://github.com/dlmanning/gulp-sass](https://github.com/dlmanning/gulp-sass).
-* `gulp-sourcemaps`: Source map support for Gulp. For further details, please visit 
-[https://github.com/gulp-sourcemaps/gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps).
-* `gulp-tslint`: TypeScript linter plugin for Gulp. For further detials, please visit 
-[https://github.com/panuhorsmalahti/gulp-tslint](https://github.com/panuhorsmalahti/gulp-tslint).
-* `gulp-typescript`:
-* `normalize-scss`:
-* `rimraf`:
-* `tslint`:
-* `typescript`:
+* `browser-sync` [https://github.com/BrowserSync/browser-sync](https://github.com/BrowserSync/browser-sync):
+Plugin to keep multiple browsers & devices in sync when building websites.
+* `gulp` [https://github.com/gulpjs/gulp](https://github.com/gulpjs/gulp): 
+Toolkit that helps you automate painful or time-consuming tasks in your development workflow. 
+* `gulp-autoprefixer` [https://github.com/sindresorhus/gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer): 
+Plugin to parse CSS and add vendor prefixes to CSS rules using values from 
+[Can I Use](https://caniuse.com/). It is 
+[recommended](https://developers.google.com/web/tools/setup/setup-buildtools#dont_trip_up_with_vendor_prefixes) 
+by Google and used in Twitter and Taobao.
+* `gulp-hb` [https://github.com/shannonmoeller/gulp-hb](https://github.com/shannonmoeller/gulp-hb):
+A sane Gulp plugin to compile Handlebars templates. Useful as a static site generator.
+* `gulp-sass` [https://github.com/dlmanning/gulp-sass](https://github.com/dlmanning/gulp-sass):
+Sass plugin for Gulp.
+* `gulp-sourcemaps` [https://github.com/gulp-sourcemaps/gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps): 
+Source map support for Gulp.
+* `gulp-tslint` [https://github.com/panuhorsmalahti/gulp-tslint](https://github.com/panuhorsmalahti/gulp-tslint): 
+TypeScript linter plugin for Gulp.
+* `gulp-typescript` [https://github.com/ivogabe/gulp-typescript](https://github.com/ivogabe/gulp-typescript): 
+A TypeScript compiler for gulp with incremental compilation support.
+* `normalize-scss` [https://github.com/JohnAlbin/normalize-scss](https://github.com/JohnAlbin/normalize-scss):
+Sass version of Normalize.css, a collection of HTML element and attribute rulesets to normalize styles across all browsers.
+* `rimraf` [https://github.com/isaacs/rimraf](https://github.com/isaacs/rimraf):
+A `rm -rf` util for node.js.
+* `tslint` [https://github.com/palantir/tslint](https://github.com/palantir/tslint): 
+An extensible linter for the TypeScript language.
+* `typescript` [https://github.com/Microsoft/TypeScript](https://github.com/Microsoft/TypeScript):
+TypeScript is a superset of JavaScript that compiles to clean JavaScript output.
+
 
 
 
