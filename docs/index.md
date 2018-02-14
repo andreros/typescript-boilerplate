@@ -7,9 +7,10 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 
 *  [To Do / Roadmap](#roadmap)
 *  [Creating a TypeScript project from scratch](#creating-project)
-    *  [Project Initial Setup](#creating-project-1)
-    *  [The First Project File](#creating-project-2)
-    *  [Dependencies](#creating-project-3)
+*  [1 - Project Initial Setup](#initial-setup)
+*  [2 - The First Project File](#first-file)
+*  [3 - Dependencies](#dependencies)
+*  [4 - Project File Structure](chapter2.md#file-structure)
 
 
 ## To Do / Roadmap <a name="roadmap"></a>
@@ -26,13 +27,27 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 First of all, we assume you already have installed [Node.js](https://nodejs.org/en/download/) in your computer, as well 
 as, your favourite browser and text editor or IDE.
 
-### 1 - Project Initial Setup <a name="creating-project-1">
+A TypeScript project is a project aimed for the web, or at least to run in a web browser. It could also be aimed to run
+in a Node.js server, but it is not the case here.
+
+In this project we will use HTML 5 for our markup, SASS as our CSS processor, Handlebars as our templating engine and 
+TypeScript as our javascript coding language. We will also use Gulp as our task automator and Browser Sync as our 
+development server synchronizing tool.
+
+*  SASS CSS Pre-processor: [https://sass-lang.com/](https://sass-lang.com/)
+*  Handlebars Templating Engine: [http://handlebarsjs.com/](http://handlebarsjs.com/)
+*  TypeScript Scripting Language: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+*  Gulp Task Automator: [https://gulpjs.com/](https://gulpjs.com/)
+*  Browser Sync Server Synchronizing Tool: [https://browsersync.io/](https://browsersync.io/)
+
+
+### 1 - Project Initial Setup <a name="initial-setup">
 
 Create a new empty project in your IDE and give it a suitable name. The name used  for the project in this documentation 
 will be `typescript-boilerplate`. 
 
 
-### 2 - The First Project File <a name="creating-project-2"> 
+### 2 - The First Project File <a name="first-file"> 
 
 Now that we have our empty project created, what is the first file we should create in it?
 
@@ -74,7 +89,8 @@ all dependencies listed here will be installed.
 * `devDependencies`: Similarly to the `dependencies` property, this property holds a list of all the project dependencies
 used in development. When the project is installed for development, all dependencies listed here will be installed.
 
-### 3 - Dependencies <a name="creating-project-3">
+
+### 3 - Dependencies <a name="dependencies">
 
 Since our project is a TypeScript boilerplate, the following dependencies are the ones needed for the development of 
 such project. Therefore, we will be focusing on the development dependencies rather than the distribution ones.
@@ -131,11 +147,8 @@ An extensible linter for the TypeScript language.
 TypeScript is a superset of JavaScript that compiles to clean JavaScript output.
 
 
+Now that our `package.json` file is in place, from the project directory run the command `npm install` to install all 
+the needed project dependencies. Notice the newly created directory `node_modules` inside the project directory.
 
 
-
-
-
-
-
-
+### Next: [4 - Project File Structure](chapter2.md#file-structure)
