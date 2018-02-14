@@ -30,9 +30,9 @@ as, your favourite browser and text editor or IDE.
 A TypeScript project is a project aimed for the web, or at least to run in a web browser. It could also be aimed to run
 in a Node.js server, but it is not the case here.
 
-In this project we will use HTML 5 for our markup, SASS as our CSS processor, Handlebars as our templating engine and 
-TypeScript as our javascript coding language. We will also use Gulp as our task automator and Browser Sync as our 
-development server synchronizing tool.
+In this project we will be using HTML 5 for our markup, SASS as our CSS processor, Handlebars as our templating engine 
+and TypeScript as our coding language. We will also ube using Gulp as our task automator and Browser Sync as our 
+development server / browser synchronizing tool.
 
 *  SASS CSS Pre-processor: [https://sass-lang.com/](https://sass-lang.com/)
 *  Handlebars Templating Engine: [http://handlebarsjs.com/](http://handlebarsjs.com/)
