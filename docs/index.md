@@ -12,7 +12,7 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
     *  [Dependencies](#creating-project-3)
 
 
-## <a name="roadmap"></a>To Do / Roadmap
+## To Do / Roadmap <a name="roadmap"></a>
 
 1. Gulp task: Compile all Typescript files into one single file.
 1. Gulp task: Create a Gulp Uglify task.
@@ -21,18 +21,18 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
 
 
-## <a name="creating-project"></a>Creating a TypeScript project from scratch
+## Creating a TypeScript project from scratch <a name="creating-project"></a>
 
 First of all, we assume you already have installed [Node.js](https://nodejs.org/en/download/) in your computer, as well 
 as, your favourite browser and text editor or IDE.
 
-### 1 - Project Initial Setup XXX<a name="creating-project-1">
+### 1 - Project Initial Setup <a name="creating-project-1">
 
 Create a new empty project in your IDE and give it a suitable name. The name used  for the project in this documentation 
 will be `typescript-boilerplate`. 
 
 
-### <a name="creating-project-2">2 - The First Project File 
+### 2 - The First Project File <a name="creating-project-2"> 
 
 Now that we have our empty project created, what is the first file we should create in it?
 
@@ -74,7 +74,7 @@ all dependencies listed here will be installed.
 * `devDependencies`: Similarly to the `dependencies` property, this property holds a list of all the project dependencies
 used in development. When the project is installed for development, all dependencies listed here will be installed.
 
-### <a name="creating-project-3">3 - Dependencies
+### 3 - Dependencies <a name="creating-project-3">
 
 Since our project is a TypeScript boilerplate, the following dependencies are the ones needed for the development of 
 such project. Therefore, we will be focusing on the development dependencies rather than the distribution ones.
