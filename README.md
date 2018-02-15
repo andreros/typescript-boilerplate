@@ -45,7 +45,7 @@ browser should open a window with the project running from [http://localhost:300
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+5. Submit a pull request
 
 
 ## Author
@@ -60,5 +60,5 @@ browser should open a window with the project running from [http://localhost:300
 
 ## License
 
-This is free and unencumbered software released into the [public domain](UNLICENSE.txt) License. For more information, 
+This is free and unencumbered software released into the [public domain](UNLICENSE.txt) license. For more information, 
 please refer to [http://unlicense.org](http://unlicense.org).

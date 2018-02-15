@@ -137,7 +137,7 @@ gulp.task('serve', function() {
             switch (err.code) {
                 case 'ENOENT':
                     console.log('\x1b[31mGulp "serve" task error\x1b[0m: There is no build available. ' +
-                        'Please, run the command \x1b[32mgulp build\x1b[0m before starting the server' +
+                        'Please, run the command \x1b[32mgulp build\x1b[0m before starting the server ' +
                         'or simply \x1b[32mgulp\x1b[0m.\n');
                     break;
                 default:
