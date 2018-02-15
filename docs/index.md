@@ -18,7 +18,6 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 1. Gulp task: Compile all Typescript files into one single file.
 1. Gulp task: Create a Gulp Uglify task.
 1. Gulp task: Create a Gulp Minify task (Thanks to [HugoGon](https://github.com/HugoGon) recommendation).
-1. Gulp task: Read multiple JSON files into one central JSON file.
 1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
 
 

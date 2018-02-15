@@ -39,6 +39,14 @@ browser should open a window with the project running from [http://localhost:300
 *  Browser Sync Server Synchronizing Tool: [https://browsersync.io/](https://browsersync.io/)
 
 
+## To Do / Roadmap
+
+1. Gulp task: Compile all Typescript files into one single file.
+1. Gulp task: Create a Gulp Uglify task.
+1. Gulp task: Create a Gulp Minify task (Thanks to [HugoGon](https://github.com/HugoGon) recommendation).
+1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
+
+
 ## Contributing
 
 1. Fork this project: [https://github.com/andreros/typescript-boilerplate/fork](https://github.com/andreros/typescript-boilerplate/fork) 

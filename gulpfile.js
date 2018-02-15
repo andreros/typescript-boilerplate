@@ -22,6 +22,7 @@ const gulp = require('gulp'),
 
     // Handlebars
     hb = require('gulp-hb'),
+    mergeJson = require('gulp-merge-json'),
 
     // Browser Sync
     browserSync = require('browser-sync').create();
@@ -86,22 +87,36 @@ gulp.task('build:scss', function () {
 });
 
 /**
+ * Build JSON task.
+ * This task is responsible for merging all JSON files into one central JSON file.
+ */
+gulp.task('build:json', function() {
+    return gulp.src(SRC_FOLDER + '/**/*.json')
+        .pipe(mergeJson({
+            fileName: 'index.json'
+        }))
+        .pipe(gulp.dest(DIST_FOLDER));
+});
+
+/**
  * Build HTML task.
  * This task is responsible for compiling Handlebars templates into HTML.
  */
 gulp.task('build:html', function () {
-    // TODO: Read multiple JSON files into one central JSON file.
-    var content = fs.readFileSync(SRC_FOLDER + '/index.json');
-    var templateData = JSON.parse(content);
-
-    return gulp
-        .src(SRC_FOLDER + '/index.html')
-        .pipe(hb({ debug: false }) // set to 'true' to enable debug
-            .partials(SRC_FOLDER + '/**/*.hbs')
-            //.helpers('./src/assets/helpers/*.js')
-            .data(templateData)
-        )
-        .pipe(gulp.dest(DIST_FOLDER));
+    // sub task
+    gulp.task('build:html:after:build:json', ['build:json'], function() {
+        var content = fs.readFileSync(DIST_FOLDER + '/index.json');
+        var templateData = JSON.parse(content);
+        return gulp
+            .src(SRC_FOLDER + '/index.html')
+            .pipe(hb({ debug: false }) // set to 'true' to enable debug
+                .partials(SRC_FOLDER + '/**/*.hbs')
+                //.helpers('./src/assets/helpers/*.js')
+                .data(templateData)
+            )
+            .pipe(gulp.dest(DIST_FOLDER));
+    });
+    gulp.start('build:html:after:build:json');
 });
 
 /**
@@ -155,9 +170,8 @@ gulp.task('serve', function() {
  * in a distributable format. This task also starts the application server in development mode.
  */
 gulp.task('default', ['clean'], function() {
-    gulp.task('build:serve', [ 'ts:lint', 'ts:compile', 'copy:images', 'build:scss', 'build:html' ], function() {
+    gulp.task('serve:after:build', [ 'ts:lint', 'ts:compile', 'copy:images', 'build:scss', 'build:html' ], function() {
         gulp.start('serve');
     });
-    gulp.start('build:serve');
+    gulp.start('serve:after:build');
 });
-
