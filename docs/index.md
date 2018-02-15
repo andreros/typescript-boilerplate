@@ -103,14 +103,15 @@ such project. Therefore, we will be focusing on the development dependencies rat
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "^4.1.0",
         "gulp-hb": "^7.0.1",
+        "gulp-merge-json": "^1.2.1",
         "gulp-sass": "^3.1.0",
         "gulp-sourcemaps": "^2.6.4",
-        "gulp-tslint": "^8.1.2",
+        "gulp-tslint": "^8.1.3",
         "gulp-typescript": "^4.0.1",
         "normalize-scss": "^7.0.1",
         "rimraf": "^2.6.2",
         "tslint": "^5.9.1",
-        "typescript": "^2.6.2"
+        "typescript": "^2.7.1"
     },
     
     ...
@@ -128,6 +129,8 @@ Plugin to parse CSS and add vendor prefixes to CSS rules using values from
 by Google and used in Twitter and Taobao.
 * `gulp-hb` [https://github.com/shannonmoeller/gulp-hb](https://github.com/shannonmoeller/gulp-hb):
 A sane Gulp plugin to compile Handlebars templates. Useful as a static site generator.
+* `gulp-merge-json` [https://github.com/joshswan/gulp-merge-json](https://github.com/joshswan/gulp-merge-json):
+A gulp plugin for deep-merging multiple JSON & JSON5 files into one file. Export as JSON or a node module.
 * `gulp-sass` [https://github.com/dlmanning/gulp-sass](https://github.com/dlmanning/gulp-sass):
 Sass plugin for Gulp.
 * `gulp-sourcemaps` [https://github.com/gulp-sourcemaps/gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps): 
