@@ -1,6 +1,6 @@
 {
     "name": "typescript-boilerplate",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML templating.",
     "main": "index.html",
     "scripts": {
@@ -11,8 +11,11 @@
         "browser-sync": "^2.23.6",
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "^4.1.0",
+        "gulp-browserify": "^0.5.1",
+        "gulp-concat": "^2.6.1",
         "gulp-hb": "^7.0.1",
         "gulp-merge-json": "^1.2.1",
+        "gulp-rename": "^1.2.2",
         "gulp-sass": "^3.1.0",
         "gulp-sourcemaps": "^2.6.4",
         "gulp-tslint": "^8.1.3",

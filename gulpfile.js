@@ -15,6 +15,13 @@ const gulp = require('gulp'),
     // TypeScript
     ts = require('gulp-typescript'),
 
+    // Javascript
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename'),
+
+    // Browserify
+    browserify = require('gulp-browserify'),
+
     // SASS
     sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
@@ -54,11 +61,24 @@ gulp.task('ts:lint', function () {
  * This task is responsible for transpiling the application TS (Typescript) into regular Javascript.
  */
 gulp.task('ts:compile', function () {
-    // TODO: Compile all TypeScript files into one (index.js) JavaScript file.
     var tsProject = ts.createProject('tsconfig.json');
     return gulp.src(SRC_FOLDER + '/**/*.ts')
         .pipe(tsProject())
         .js
+        .pipe(gulp.dest(DIST_FOLDER));
+});
+
+/**
+ * Browserify task.
+ * This task is responsible for bundling all transpiled javascript files into one file with all the javascript code to be executed.
+ */
+gulp.task('browserify', ['ts:compile'], function() {
+    // Single entry point to browserify 
+    return gulp.src(DIST_FOLDER + '/index.js')
+        .pipe(browserify({
+          insertGlobals : true
+        }))
+        .pipe(concat('bundle.js'))
         .pipe(gulp.dest(DIST_FOLDER));
 });
 
@@ -123,7 +143,7 @@ gulp.task('build:html', function () {
  * Build main task.
  * This task is responsible for gathering all the subtasks involved in the building process and launch them in parallel.
  */
-gulp.task('build', [ 'ts:lint', 'ts:compile', 'copy:images', 'build:scss', 'build:html' ]);
+gulp.task('build', [ 'ts:lint', 'browserify', 'copy:images', 'build:scss', 'build:html' ]);
 
 /**
  * Serve task.
@@ -170,7 +190,7 @@ gulp.task('serve', function() {
  * in a distributable format. This task also starts the application server in development mode.
  */
 gulp.task('default', ['clean'], function() {
-    gulp.task('serve:after:build', [ 'ts:lint', 'ts:compile', 'copy:images', 'build:scss', 'build:html' ], function() {
+    gulp.task('serve:after:build', [ 'ts:lint', 'browserify', 'copy:images', 'build:scss', 'build:html' ], function() {
         gulp.start('serve');
     });
     gulp.start('serve:after:build');

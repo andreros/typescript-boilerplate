@@ -37,13 +37,13 @@ browser should open a window with the project running from [http://localhost:300
 *  TypeScript Scripting Language: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
 *  Gulp Task Automator: [https://gulpjs.com/](https://gulpjs.com/)
 *  Browser Sync Server Synchronizing Tool: [https://browsersync.io/](https://browsersync.io/)
+*  Browserify modules / dependencies bundler: [http://browserify.org/](http://browserify.org/)
 
 
 ## To Do / Roadmap
 
-1. Gulp task: Compile all Typescript files into one single file.
-1. Gulp task: Create a Gulp Uglify task.
-1. Gulp task: Create a Gulp Minify task (Thanks to [HugoGon](https://github.com/HugoGon) recommendation).
+1. Create Gulp task to clean all unneeded files inside the "./dist" directory.
+1. Create a meaningful component hierarchy example (i.e. header, body, footer components).
 1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
 
 

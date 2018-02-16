@@ -1,11 +1,18 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es6",
+        "target": "es5",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
         "sourceMap": true
     },
+    "include": [
+        "src/**/*.ts"
+    ],
     "exclude": [
         "dist",
-        "node_modules"
-    ]
+        "node_modules/**"
+    ],
+    "compileOnSave": false
 }
