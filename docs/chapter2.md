@@ -52,6 +52,7 @@ Documentation for the Typescript Boilerplate project.
 * `dist`: Folder containing the version built for distribution.
 * `docs`: Folder containing the project documentation.
 * `src`: Folder containing the project source code.
+    * `components`: the application components folder.
 * `.editorconfig`: File containing the editor configuration for text editors or IDEs capable of interpreting this file.
 * `.gitignore`: File containing a set of rules indicating which files should be ignored when commiting or pushing code to a git repository.
 * `gulpfile.js`: File containing the Gulp tasks implementation.

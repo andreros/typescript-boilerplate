@@ -4,7 +4,9 @@
     "description": "Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML templating.",
     "main": "index.html",
     "scripts": {
-        "dev": "gulp default"
+        "start": "gulp",
+        "dev": "gulp default",
+        "serve": "gulp serve"
     },
     "dependencies": {},
     "devDependencies": {

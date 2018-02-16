@@ -1,5 +1,6 @@
-import { Component1 } from "./components/component1/index";
+// Application entry point
+import { Header } from "./components/index";
 
-let myComponent = new Component1("Earthling");
+let header = new Header("Earthling");
 
-console.log("myComponent: ", myComponent);
+console.log("header: ", header);

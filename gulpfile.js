@@ -34,8 +34,10 @@ const gulp = require('gulp'),
     // Browser Sync
     browserSync = require('browser-sync').create();
 
-const DIST_FOLDER = './dist';
 const SRC_FOLDER = './src';
+const SRC_ASSETS_FOLDER = SRC_FOLDER + '/assets';
+const DIST_FOLDER = './dist';
+const DIST_ASSETS_FOLDER = DIST_FOLDER + '/assets';
 
 /**
  * Clean task.
@@ -73,7 +75,7 @@ gulp.task('ts:compile', function () {
  * This task is responsible for bundling all transpiled javascript files into one file with all the javascript code to be executed.
  */
 gulp.task('browserify', ['ts:compile'], function() {
-    // Single entry point to browserify 
+    // Single entry point to browserify
     return gulp.src(DIST_FOLDER + '/index.js')
         .pipe(browserify({
           insertGlobals : true
@@ -87,8 +89,8 @@ gulp.task('browserify', ['ts:compile'], function() {
  * This task is responsible for copying the application images folder into the distribution folder.
  */
 gulp.task('copy:images', function () {
-    return gulp.src(SRC_FOLDER + '/assets/img/**/*')
-        .pipe(gulp.dest(DIST_FOLDER + '/assets/img/'));
+    return gulp.src(SRC_ASSETS_FOLDER + '/img/**/*')
+        .pipe(gulp.dest(DIST_ASSETS_FOLDER + '/img/'));
 });
 
 /**
@@ -122,21 +124,17 @@ gulp.task('build:json', function() {
  * Build HTML task.
  * This task is responsible for compiling Handlebars templates into HTML.
  */
-gulp.task('build:html', function () {
-    // sub task
-    gulp.task('build:html:after:build:json', ['build:json'], function() {
-        var content = fs.readFileSync(DIST_FOLDER + '/index.json');
-        var templateData = JSON.parse(content);
-        return gulp
-            .src(SRC_FOLDER + '/index.html')
-            .pipe(hb({ debug: false }) // set to 'true' to enable debug
-                .partials(SRC_FOLDER + '/**/*.hbs')
-                //.helpers('./src/assets/helpers/*.js')
-                .data(templateData)
-            )
-            .pipe(gulp.dest(DIST_FOLDER));
-    });
-    gulp.start('build:html:after:build:json');
+gulp.task('build:html', ['build:json'], function () {
+    var content = fs.readFileSync(DIST_FOLDER + '/index.json');
+    var templateData = JSON.parse(content);
+    return gulp
+        .src(SRC_FOLDER + '/index.html')
+        .pipe(hb({ debug: false }) // set to 'true' to enable debug
+            .partials(SRC_FOLDER + '/**/*.hbs')
+            .helpers([SRC_ASSETS_FOLDER + '/handlebars-helpers/**/*.js'])
+            .data(templateData)
+        )
+        .pipe(gulp.dest(DIST_FOLDER));
 });
 
 /**
@@ -164,6 +162,7 @@ gulp.task('serve', function() {
             // listen for changes in the following file types
             gulp.watch(SRC_FOLDER + '/**/*.ts', [ 'ts:lint', 'ts:compile' ]);
             gulp.watch(SRC_FOLDER + '/**/*.scss', [ 'build:scss' ]);
+            gulp.watch(SRC_FOLDER + '/**/*.json', [ 'build:html' ]);
             gulp.watch(SRC_FOLDER + '/**/*.hbs', [ 'build:html' ]);
             gulp.watch(SRC_FOLDER + '/**/*.html', [ 'build:html' ]);
             gulp.watch([ DIST_FOLDER + '/*.js', DIST_FOLDER + '/*.html', DIST_FOLDER + '/*.css' ]).on('change', browserSync.reload);
