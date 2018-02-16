@@ -42,8 +42,7 @@ browser should open a window with the project running from [http://localhost:300
 
 ## To Do / Roadmap
 
-1. Create Gulp task to clean all unneeded files inside the "./dist" directory.
-1. Create a meaningful component hierarchy example (i.e. header, body, footer components).
+1. Create an example page for the project.
 1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
 
 

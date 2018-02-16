@@ -20,7 +20,10 @@ const gulp = require('gulp'),
     rename = require('gulp-rename'),
 
     // Browserify
-    browserify = require('gulp-browserify'),
+    browserify = require('browserify'),
+    uglify = require('gulp-uglify-es').default,
+    vinylSourceStream = require('vinyl-source-stream'),
+    vinylBuffer = require('vinyl-buffer'),
 
     // SASS
     sourcemaps = require('gulp-sourcemaps'),
@@ -43,7 +46,7 @@ const DIST_ASSETS_FOLDER = DIST_FOLDER + '/assets';
  * Clean task.
  * This task is responsible for removing the whole 'dist' folder before making a new build.
  */
-gulp.task('clean', function(callback) {
+gulp.task('clean', function (callback) {
     rimraf(DIST_FOLDER, {}, callback);
 });
 
@@ -53,7 +56,7 @@ gulp.task('clean', function(callback) {
  */
 gulp.task('ts:lint', function () {
     var program = tslint.Linter.createProgram("tsconfig.json");
-    gulp.src([ SRC_FOLDER + '/**/*.ts' ])
+    gulp.src([SRC_FOLDER + '/**/*.ts'])
         .pipe(gulpTslint({ program: program, formatter: 'verbose' }))
         .pipe(gulpTslint.report());
 });
@@ -74,13 +77,18 @@ gulp.task('ts:compile', function () {
  * Browserify task.
  * This task is responsible for bundling all transpiled javascript files into one file with all the javascript code to be executed.
  */
-gulp.task('browserify', ['ts:compile'], function() {
+gulp.task('browserify', ['ts:compile'], function () {
     // Single entry point to browserify
-    return gulp.src(DIST_FOLDER + '/index.js')
-        .pipe(browserify({
-          insertGlobals : true
-        }))
-        .pipe(concat('bundle.js'))
+    var b = browserify({
+        entries: DIST_FOLDER + '/index.js',
+        debug: true
+    });
+    return b.bundle()
+        .pipe(vinylSourceStream('bundle.js'))
+        .pipe(vinylBuffer())
+        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(DIST_FOLDER));
 });
 
@@ -103,7 +111,7 @@ gulp.task('build:scss', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
         .pipe(autoprefixer({
-            browsers: [ 'last 2 versions' ]
+            browsers: ['last 2 versions']
         }))
         .pipe(gulp.dest(DIST_FOLDER));
 });
@@ -112,7 +120,7 @@ gulp.task('build:scss', function () {
  * Build JSON task.
  * This task is responsible for merging all JSON files into one central JSON file.
  */
-gulp.task('build:json', function() {
+gulp.task('build:json', function () {
     return gulp.src(SRC_FOLDER + '/**/*.json')
         .pipe(mergeJson({
             fileName: 'index.json'
@@ -138,10 +146,22 @@ gulp.task('build:html', ['build:json'], function () {
 });
 
 /**
+ * Build clean task.
+ * This task is responsible for removing from the 'dist' folder the files not needed for the build.
+ */
+gulp.task('build:clean', function () {
+    rimraf(DIST_FOLDER + '/components', {}, function() {});
+    rimraf(DIST_FOLDER + '/index.js', {}, function() {});
+    rimraf(DIST_FOLDER + '/index.json', {}, function() {});
+});
+
+/**
  * Build main task.
  * This task is responsible for gathering all the subtasks involved in the building process and launch them in parallel.
  */
-gulp.task('build', [ 'ts:lint', 'browserify', 'copy:images', 'build:scss', 'build:html' ]);
+gulp.task('build', ['ts:lint', 'browserify', 'copy:images', 'build:scss', 'build:html'], function() {
+    gulp.start('build:clean');
+});
 
 /**
  * Serve task.
@@ -149,9 +169,9 @@ gulp.task('build', [ 'ts:lint', 'browserify', 'copy:images', 'build:scss', 'buil
  * development process. If any changes are detected in one of those files, the build process is triggered and finally,
  * Browser Sync reloads the application in all opened browsers.
  */
-gulp.task('serve', function() {
+gulp.task('serve', function () {
     // make sure the application is built before launching
-    fs.stat(DIST_FOLDER + '/index.html', function(err) {
+    fs.stat(DIST_FOLDER + '/index.html', function (err) {
         if (!err) {
             browserSync.init({
                 server: {
@@ -160,12 +180,12 @@ gulp.task('serve', function() {
                 }
             });
             // listen for changes in the following file types
-            gulp.watch(SRC_FOLDER + '/**/*.ts', [ 'ts:lint', 'ts:compile' ]);
-            gulp.watch(SRC_FOLDER + '/**/*.scss', [ 'build:scss' ]);
-            gulp.watch(SRC_FOLDER + '/**/*.json', [ 'build:html' ]);
-            gulp.watch(SRC_FOLDER + '/**/*.hbs', [ 'build:html' ]);
-            gulp.watch(SRC_FOLDER + '/**/*.html', [ 'build:html' ]);
-            gulp.watch([ DIST_FOLDER + '/*.js', DIST_FOLDER + '/*.html', DIST_FOLDER + '/*.css' ]).on('change', browserSync.reload);
+            gulp.watch(SRC_FOLDER + '/**/*.ts', ['ts:lint', 'ts:compile']);
+            gulp.watch(SRC_FOLDER + '/**/*.scss', ['build:scss']);
+            gulp.watch(SRC_FOLDER + '/**/*.json', ['build:html']);
+            gulp.watch(SRC_FOLDER + '/**/*.hbs', ['build:html']);
+            gulp.watch(SRC_FOLDER + '/**/*.html', ['build:html']);
+            gulp.watch([DIST_FOLDER + '/*.js', DIST_FOLDER + '/*.html', DIST_FOLDER + '/*.css']).on('change', browserSync.reload);
         } else {
             // detect specific errors
             switch (err.code) {
@@ -188,8 +208,9 @@ gulp.task('serve', function() {
  * This task is responsible for bundling and running all tasks associated with the production of the application
  * in a distributable format. This task also starts the application server in development mode.
  */
-gulp.task('default', ['clean'], function() {
-    gulp.task('serve:after:build', [ 'ts:lint', 'browserify', 'copy:images', 'build:scss', 'build:html' ], function() {
+gulp.task('default', ['clean'], function () {
+    gulp.task('serve:after:build', ['ts:lint', 'browserify', 'copy:images', 'build:scss', 'build:html'], function () {
+        gulp.start('build:clean');
         gulp.start('serve');
     });
     gulp.start('serve:after:build');

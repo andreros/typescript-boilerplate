@@ -9,14 +9,19 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 *  [Creating a TypeScript project from scratch](#creating-project)
 *  [1 - Project Initial Setup](#initial-setup)
 *  [2 - The First Project File](#first-file)
-*  [3 - Dependencies](#dependencies)
-*  [4 - Project File Structure](chapter2.html#file-structure)
+*  [3 - Dependencies](chapter2.html#dependencies)
+*  [4 - Project File Structure](chapter3.html#file-structure)
+*  [5 - Gulp Task Automation](chapter4.html#task-automation)
+*  [6 - TypeScript Linting and Compiling](chapter5.html#typescript)
+*  [7 - Browserify](chapter6.html#browserify)
+*  [8 - CSS Pre-processing](chapter7.html#sass)
+*  [9 - HTML Templates Compiling](chapter8.html#handlebars)
+*  [10 - Development Server](chapter9.html#browser-sync)
 
 
 ## To Do / Roadmap <a name="roadmap"></a>
 
-1. Create Gulp task to clean all unneeded files inside the "./dist" directory.
-1. Create a meaningful component hierarchy example (i.e. header, body, footer components).
+1. Create an example page for the project.
 1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
 
 
@@ -35,6 +40,7 @@ development server / browser synchronizing tool.
 *  SASS CSS Pre-processor: [https://sass-lang.com/](https://sass-lang.com/)
 *  Handlebars Templating Engine: [http://handlebarsjs.com/](http://handlebarsjs.com/)
 *  TypeScript Scripting Language: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+*  Browserify modules / dependencies bundler: [http://browserify.org/](http://browserify.org/)
 *  Gulp Task Automator: [https://gulpjs.com/](https://gulpjs.com/)
 *  Browser Sync Server Synchronizing Tool: [https://browsersync.io/](https://browsersync.io/)
 
@@ -88,78 +94,4 @@ all dependencies listed here will be installed.
 used in development. When the project is installed for development, all dependencies listed here will be installed.
 
 
-### 3 - Dependencies <a name="dependencies">
-
-Since our project is a TypeScript boilerplate, the following dependencies, ordered alphabetically for better readalility,
-are the ones needed for the development of such project. Therefore, we will be focusing on the development dependencies
-rather than the distribution ones.
-
-```json
-{
-    ...
-
-    "devDependencies": {
-        "browser-sync": "^2.23.6",
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^4.1.0",
-        "gulp-browserify": "^0.5.1",
-        "gulp-concat": "^2.6.1",
-        "gulp-hb": "^7.0.1",
-        "gulp-merge-json": "^1.2.1",
-        "gulp-rename": "^1.2.2",
-        "gulp-sass": "^3.1.0",
-        "gulp-sourcemaps": "^2.6.4",
-        "gulp-tslint": "^8.1.3",
-        "gulp-typescript": "^4.0.1",
-        "normalize-scss": "^7.0.1",
-        "rimraf": "^2.6.2",
-        "tslint": "^5.9.1",
-        "typescript": "^2.7.1"
-    },
-
-    ...
-}
-```
-
-* `browser-sync` [https://github.com/BrowserSync/browser-sync](https://github.com/BrowserSync/browser-sync):
-Plugin to keep multiple browsers & devices in sync when building websites.
-* `gulp` [https://github.com/gulpjs/gulp](https://github.com/gulpjs/gulp):
-Toolkit that helps you automate painful or time-consuming tasks in your development workflow.
-* `gulp-autoprefixer` [https://github.com/sindresorhus/gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer):
-Plugin to parse CSS and add vendor prefixes to CSS rules using values from
-[Can I Use](https://caniuse.com/). It is
-[recommended](https://developers.google.com/web/tools/setup/setup-buildtools#dont_trip_up_with_vendor_prefixes)
-by Google and used in Twitter and Taobao.
-* `gulp-browserify` [https://github.com/deepak1556/gulp-browserify](https://github.com/deepak1556/gulp-browserify):
-Bundle modules with BrowserifyJS.
-* `gulp-concat` [https://github.com/gulp-community/gulp-concat](https://github.com/gulp-community/gulp-concat):
-Streaming concat middleware for Gulp.
-* `gulp-hb` [https://github.com/shannonmoeller/gulp-hb](https://github.com/shannonmoeller/gulp-hb):
-A sane Gulp plugin to compile Handlebars templates. Useful as a static site generator.
-* `gulp-merge-json` [https://github.com/joshswan/gulp-merge-json](https://github.com/joshswan/gulp-merge-json):
-A gulp plugin for deep-merging multiple JSON & JSON5 files into one file. Export as JSON or a node module.
-* `gulp-rename` [https://github.com/hparra/gulp-rename](https://github.com/hparra/gulp-rename):
-A gulp plugin for renaming files. This plugin provides simple file renaming methods.
-* `gulp-sass` [https://github.com/dlmanning/gulp-sass](https://github.com/dlmanning/gulp-sass):
-Sass plugin for Gulp.
-* `gulp-sourcemaps` [https://github.com/gulp-sourcemaps/gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps):
-Source map support for Gulp.
-* `gulp-tslint` [https://github.com/panuhorsmalahti/gulp-tslint](https://github.com/panuhorsmalahti/gulp-tslint):
-TypeScript linter plugin for Gulp.
-* `gulp-typescript` [https://github.com/ivogabe/gulp-typescript](https://github.com/ivogabe/gulp-typescript):
-A TypeScript compiler for gulp with incremental compilation support.
-* `normalize-scss` [https://github.com/JohnAlbin/normalize-scss](https://github.com/JohnAlbin/normalize-scss):
-Sass version of Normalize.css, a collection of HTML element and attribute rulesets to normalize styles across all browsers.
-* `rimraf` [https://github.com/isaacs/rimraf](https://github.com/isaacs/rimraf):
-A `rm -rf` util for node.js.
-* `tslint` [https://github.com/palantir/tslint](https://github.com/palantir/tslint):
-An extensible linter for the TypeScript language.
-* `typescript` [https://github.com/Microsoft/TypeScript](https://github.com/Microsoft/TypeScript):
-TypeScript is a superset of JavaScript that compiles to clean JavaScript output.
-
-
-Now that our `package.json` file is in place, from the project directory run the command `npm install` to install all
-the needed project dependencies. Notice the newly created directory `node_modules` inside the project directory.
-
-
-### Next: [4 - Project File Structure](chapter2.html#file-structure)
+### Next: [3 - dependencies](chapter2.html#dependencies)
