@@ -94,7 +94,7 @@ gulp.task('browserify', ['ts:compile'], function () {
 
 /**
  * Copy Images task.
- * This task is responsible for copying the application images folder into the distribution folder.
+ * This task is responsible for copying the application images folder into the 'dist' folder.
  */
 gulp.task('copy:images', function () {
     return gulp.src(SRC_ASSETS_FOLDER + '/img/**/*')
@@ -103,7 +103,7 @@ gulp.task('copy:images', function () {
 
 /**
  * Build SCSS task.
- * This task is responsible for processing SASS files to CSS.
+ * This task is responsible for processing SASS files converting them to plain CSS.
  */
 gulp.task('build:scss', function () {
     return gulp.src(SRC_FOLDER + '/index.scss')
@@ -118,7 +118,7 @@ gulp.task('build:scss', function () {
 
 /**
  * Build JSON task.
- * This task is responsible for merging all JSON files into one main JSON file.
+ * This task is responsible for bundling all JSON files into one single JSON file.
  */
 gulp.task('build:json', function () {
     return gulp.src(SRC_FOLDER + '/**/*.json')

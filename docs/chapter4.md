@@ -21,28 +21,29 @@ Documentation for the Typescript Boilerplate project.
 
 ### 5 - Gulp Task Automation <a name="task-automation">
 
-The project uses Gulp to automate several tasks related to the application. Any of the tasks can be run by simply 
-executing `gulp <TASK_NAME>` in the command line in the application folder. I.e. `gulp clean` or `gulp serve`.
+The project uses [Gulp](https://gulpjs.com/) to automate several tasks related to the application. Any of the tasks can be run by simply 
+executing `gulp <TASK_NAME>` in the command line inside the application folder. I.e. `gulp clean` or `gulp serve`.
 
-The following table lists the Gulp tasks available to automate the various stages of the application lifecycle.
+The following table lists the Gulp tasks available to automate the various stages of the application lifecycle. Any precedence tasks are 
+automatically ran when running any given task.
 
 | Task | Precedences | Details |
 |:---|:---|:---|
-| `clean`       |              | this task removes the whole 'dist' folder before making a new build. |
+| `clean`       |              | This task removes the whole `dist` folder before making a new build. |
 | `ts:lint`     |              | This task performs the linting of the application typescript files for errors. |
 | `ts:compile`  |              | This task performs the transpiling of the application typescript files into regular Javascript. |
 | `browserify`  | `ts:compile` | This task bundles all transpiled javascript files into one file with all the javascript code to be executed. |
-| `copy:images` |              | This task copies the application images folder into the distribution folder. |
-| `build:scss`  |              | This task processes the application SASS files into CSS. |
-| `build:json`  |              | This task merges the application modules JSON files into one main JSON file. |
-| `build:html`  | `build:json` | This task compiles Handlebars templates into HTML. |
-| `build:clean` |              | This task removes all the unneeded files for the build from the 'dist' folder. |
+| `copy:images` |              | This task copies the application images folder into the `dist` folder. |
+| `build:scss`  |              | This task processes the application SASS files converting them into plain CSS. |
+| `build:json`  |              | This task bundles the application modules JSON files into one single JSON file. |
+| `build:html`  | `build:json` | This task compiles [Handlebars](https://handlebarsjs.com/) templates into HTML. |
+| `build:clean` |              | This task removes all the unneeded files for the build from the `dist` folder. |
 | `build`       | `ts:lint`, `browserify`, `copy:images`, `build:scss`, `build:html` | This task gathers all the subtasks involved in the building process and launches them in parallel. |
-| `serve`       |              | This task launches Browser Sync and sets up file type watchers over the files involved in the development process. If any changes are detected in one of those files, the build process is triggered and subsequently Browser Sync reloads the application in all connected browsers. |
+| `serve`       |              | This task launches [Browser Sync](https://browsersync.io/) and sets up file type watchers over the files involved in the development process. If any changes are detected in one of those files, the build process is triggered and subsequently [Browser Sync](https://browsersync.io/) reloads the application in all connected browsers. |
 | `default`     | `clean`      | This task bundles and runs all tasks associated with the production of the application in a distributable format. This task also starts the application server in development mode. |
 
 
-The following application lists the dependencies involved in each Gulp task.
+The following application lists the dependencies involved in each [Gulp](https://gulpjs.com/) task.
 
 | Task | Dependencies |
 |:---|:---|
