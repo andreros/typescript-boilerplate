@@ -64,8 +64,12 @@ Documentation for the Typescript Boilerplate project.
 │   └── index.ts
 ├── .editorconfig
 ├── .gitignore
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
 ├── gulpfile.js
+├── ISSUE_TEMPLATE.md
 ├── package.json
+├── PULL_REQUEST_TEMPLATE.md
 ├── README.md
 ├── tsconfig.json
 ├── tslint.json
@@ -104,11 +108,16 @@ Documentation for the Typescript Boilerplate project.
 
 * `.editorconfig`: File containing the editor configuration for text editors or IDEs capable of interpreting this file.
 * `.gitignore`: File containing a set of rules indicating which files should be ignored when commiting or pushing code to a git repository.
+* `CODE_OF_CONDUCT.md`: Code of Conduct about this open source community project.
+* `CONTRIBUTING.md`:  Contributing rules for this open source community project.
 * `gulpfile.js`: File containing the Gulp tasks implementation.
+* `ISSUE_TEMPLATE.md`:  Issue reportin gtemplate for the project.
 * `package.json`: File containing all the relevant project information, from project details to a list of project dependencies.
+* `PULL_REQUEST_TEMPLATE.md`:  Pull request template for the project.
 * `README.md`: File containing the details and an explanation about the project.
 * `tsconfig.json`: File containing the TypeScript compiler configuration options for this project.
 * `tslint.json`: File containing the TypeScript code Linter rules for this project.
 * `UNLICENSE.txt`: File containing the text for the licensing model applied to the project.
+
 
 ### Next: [5 - Gulp Task Automation](chapter4.html#task-automation)

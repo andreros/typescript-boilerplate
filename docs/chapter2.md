@@ -119,4 +119,5 @@ Convert streaming vinyl files to use buffers.
 Now that our `package.json` file is in place, from the project directory run the command `npm install` to install all
 the needed project dependencies. Notice the newly created directory `node_modules` inside the project directory.
 
+
 ### Next: [4 - Project File Structure](chapter3.html#file-structure)
