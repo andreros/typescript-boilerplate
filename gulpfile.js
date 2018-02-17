@@ -103,7 +103,7 @@ gulp.task('copy:images', function () {
 
 /**
  * Build SCSS task.
- * This task is responsible for converting SASS files into CSS.
+ * This task is responsible for processing SASS files to CSS.
  */
 gulp.task('build:scss', function () {
     return gulp.src(SRC_FOLDER + '/index.scss')
@@ -118,7 +118,7 @@ gulp.task('build:scss', function () {
 
 /**
  * Build JSON task.
- * This task is responsible for merging all JSON files into one central JSON file.
+ * This task is responsible for merging all JSON files into one main JSON file.
  */
 gulp.task('build:json', function () {
     return gulp.src(SRC_FOLDER + '/**/*.json')
@@ -147,7 +147,7 @@ gulp.task('build:html', ['build:json'], function () {
 
 /**
  * Build clean task.
- * This task is responsible for removing from the 'dist' folder the files not needed for the build.
+ * This task is responsible for removing the unneeded files for the build from the 'dist' folder.
  */
 gulp.task('build:clean', function () {
     rimraf(DIST_FOLDER + '/components', {}, function() {});
@@ -166,8 +166,8 @@ gulp.task('build', ['ts:lint', 'browserify', 'copy:images', 'build:scss', 'build
 /**
  * Serve task.
  * This task is responsible for launching Browser Sync and setting up watchers over the file types involved in the
- * development process. If any changes are detected in one of those files, the build process is triggered and finally,
- * Browser Sync reloads the application in all opened browsers.
+ * development process. If any changes are detected in one of those files, the build process is triggered and subsequently
+ * Browser Sync reloads the application in all connected browsers.
  */
 gulp.task('serve', function () {
     // make sure the application is built before launching

@@ -25,10 +25,9 @@ This project presents the following file structure. The structure for the compon
 is one possible approach on how to organize a library of developed components. In any case, feel free to adjust
 it to your project needs, should that necessity arise.
 
-The project implements two components `header` and `footer` which are meant to live inside the `app` component.
-The `app` component is intended to wrap any other existing components for simplicity, and be the only component 
-to be called inside our main `index.html` file. This is a common approach among modern front-end frameworks like 
-React or Angular.
+The project implements two components `header` and `footer`, meant to live inside the `app` component.In turn, 
+the `app` component is intended to wrap any other existing component, being only component called inside our main
+`index.html` file. This is a common approach among modern front-end frameworks like React or Angular.
 
 Below is a detailed explanation of each file purpose.
 
@@ -88,7 +87,8 @@ Below is a detailed explanation of each file purpose.
 └── UNLICENSE.txt
 ```
 
-* `dist`: Folder containing the version built for distribution. This folder and its contents will only be available after a sucessful build.
+* `dist`: Folder containing the version built for distribution. This folder and its contents will only be available after a 
+            successful build.
     * `assets`: The application assets folder.
         * `img`: The application images folder.
     * `bundle.js`: The application executable javascript file yield from the browserify module bundler.
