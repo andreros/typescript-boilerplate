@@ -27,7 +27,7 @@ In short, when you submit code changes, your submissions are understood to be un
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/andreros/typescript-boilerplate/issues)
 
 ## Write bug reports with detail, background, and sample code
-[This is an example from Craig Hockenberry](http://www.openradar.me/11905408)of a bug report.
+[This is an example from Craig Hockenberry](http://www.openradar.me/11905408) of a bug report.
 
 **Good Bug Reports** tend to have:
 
