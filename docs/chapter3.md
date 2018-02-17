@@ -21,6 +21,18 @@ Documentation for the Typescript Boilerplate project.
 
 ### 4 - Project File Structure <a name="file-structure">
 
+This project presents the following file structure. The structure for the components inside the `src` folder
+is one possible approach on how to organize a library of developed components. In any case, feel free to adjust
+it to your project needs, should that necessity arise.
+
+The project implements two components `header` and `footer` which are meant to live inside the `app` component.
+The `app` component is intended to wrap any other existing components for simplicity, and be the only component 
+to be called inside our main `index.html` file. This is a common approach among modern front-end frameworks like 
+React or Angular.
+
+Below is a detailed explanation of each file purpose.
+
+
 ```
 ├── dist
 │   ├── assets

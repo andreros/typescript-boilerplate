@@ -21,7 +21,15 @@ Documentation for the Typescript Boilerplate project.
 
 ### 5 - Gulp Task Automation <a name="task-automation">
 
-> To Be Done
+
+| Task | Precedences | Details |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+
 
 
 ### Next: [6 - TypeScript Linting and Compiling](chapter5.html#typescript)

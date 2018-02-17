@@ -21,9 +21,10 @@ Documentation for the Typescript Boilerplate project.
 
 ### 3 - Dependencies <a name="dependencies">
 
-Since our project is a TypeScript boilerplate, the following dependencies, ordered alphabetically for better readalility,
+Since our project is a TypeScript boilerplate, the following dependencies, ordered alphabetically for better readability,
 are the ones needed for the development of such project. Therefore, we will be focusing on the development dependencies
-rather than the distribution ones.
+rather than the distribution ones. The version chosen for each dependency was the latest version available to the date of
+writing of this documentation.
 
 ```json
 {
