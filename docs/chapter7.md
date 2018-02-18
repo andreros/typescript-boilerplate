@@ -23,20 +23,24 @@ Documentation for the Typescript Boilerplate project.
 
 A CSS pre-processor is a program or software that receives a set of input data to produce a CSS output. We have one 
 or several files in a special syntax (depending on the preprocessor) which will be transformed into CSS language.
-CSS pre-processors bring to the devolpment of CSS many useful features that the CSS specification does not have:
+CSS pre-processors bring the CSS development many useful features that the CSS specification lacks. Among others 
+we have:
 
 *  Nested syntax
 *  Variables
-*  Definition of mixins
+*  Mixins
 *  Mathematical functions
-*  Operational functions (such as “lighten” and “darken”)
-*  Reuse of CSS rules avoiding repetitions
-*  Better CSS organization in the project
-*  Multiple files to generate only one.
-*  Easy integration of tools to optimize/compress
+*  Operational functions (such as “lighten” or “darken”)
+
+which allows us to:
+
+*  Reuse CSS rules avoiding repetitions
+*  Better organize our project CSS
+*  Split our CSS into multiple files generating only one as output
+*  Easily integrate tools to optimize and/or compress the resulting CSS
 
 There are several CSS pre-processors available. For this project we use [SASS](https://sass-lang.com/). This CSS 
-pre-process is performed by the `build:scss` gulp task.
+pre-processing is performed by the `build:scss` gulp task.
 
 ```javascript
 // Build SCSS gulp task
@@ -60,7 +64,7 @@ gulp.task('build:scss', function () {
 
 The `sourcemaps` dependency generates sourcemaps for the processed CSS, allowing the debugging of the uncompressed
 CSS code inside browsers consoles. The `autoprefixer` dependency ensures the browser compatibility of any rule used
-in our CSS by adding vendor prefixes to CSS rules using values from [Can I Use](https://caniuse.com/).
+in our CSS by adding vendor prefixes to CSS rules. The list of prefixes used comes from [Can I Use](https://caniuse.com/).
 
 
 ### Next: [9 - HTML Templates Compiling](chapter8.html#handlebars)
