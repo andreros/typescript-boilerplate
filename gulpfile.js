@@ -81,7 +81,7 @@ gulp.task('browserify', ['ts:compile'], function () {
     // Single entry point to browserify
     var b = browserify({
         entries: DIST_FOLDER + '/index.js',
-        debug: true
+        debug: false
     });
     return b.bundle()
         .pipe(vinylSourceStream('bundle.js'))

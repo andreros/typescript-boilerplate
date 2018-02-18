@@ -21,11 +21,13 @@ Documentation for the Typescript Boilerplate project.
 
 ### 6 - TypeScript Linting and Compiling <a name="typescript">
 
+#### TypeScript Linting
+
 The TypeScript linter checks the application code for stylistic or programming errors. This 
 check is performed by the `ts:lint` gulp task. 
 
 ```javascript
-// TypeScript lint task
+// TypeScript lint gulp task
 
 const gulp = require('gulp'),
       gulpTslint = require('gulp-tslint'),
@@ -86,10 +88,36 @@ configuration file in our application root folder, the `tslint.json` file.
 }
 ```
 
-The `tslint.json` is an extensive file, so the previous example shows only a few for demonstration purpose. 
-For a more complete list of Typescript lint rules, please visit 
+The `tslint.json` is an extensive file, so the previous example shows only a few of the possible configurations
+for demonstration purpose. For a more complete list of Typescript lint rules, please visit 
 [https://palantir.github.io/tslint/rules/](https://palantir.github.io/tslint/rules/) or the project page
 [https://github.com/palantir/tslint](https://github.com/palantir/tslint).
+
+#### TypeScript Compiling
+
+The TypeScript compiler converts code written in the TypeScript programming language into plain 100% browser
+compatible and fully interpretable javascript. This process is called transpilation rather than compilation
+as the code is indeed converted rather than compiled. This process is performed by the `ts:compile` gulp task.
+
+```javascript
+// TypeScript compile gulp task
+
+const gulp = require('gulp'),
+      ts = require('gulp-typescript');
+
+gulp.task('ts:compile', function () {
+    var tsProject = ts.createProject('tsconfig.json');
+    return gulp.src(SRC_FOLDER + '/**/*.ts')
+        .pipe(tsProject())
+        .js
+        .pipe(gulp.dest(DIST_FOLDER));
+});
+```
+
+The `tsconfig.json` holds the configurations for the TypeScript compiler, as stated before. For a complete list 
+of all the possible TypeScript configurations, please visit 
+[https://www.typescriptlang.org/docs/handbook/compiler-options.html](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
+and [http://www.typescriptlang.org/docs/handbook/tsconfig-json.html](http://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
 
 ### Next: [7 - Browserify](chapter6.html#browserify)
