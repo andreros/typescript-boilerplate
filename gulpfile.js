@@ -52,18 +52,18 @@ gulp.task('clean', function (callback) {
 
 /**
  * Typescript Lint task.
- * This task is responsible for linting the application TS (Typescript) files for errors.
+ * This task is responsible for linting the application TypeScript files for errors.
  */
 gulp.task('ts:lint', function () {
     var program = tslint.Linter.createProgram("tsconfig.json");
-    gulp.src([SRC_FOLDER + '/**/*.ts'])
+    return gulp.src([SRC_FOLDER + '/**/*.ts'])
         .pipe(gulpTslint({ program: program, formatter: 'verbose' }))
         .pipe(gulpTslint.report());
 });
 
 /**
  * Compile Typescript task.
- * This task is responsible for transpiling the application TS (Typescript) into regular Javascript.
+ * This task is responsible for transpiling the application TypeScript into regular Javascript.
  */
 gulp.task('ts:compile', function () {
     var tsProject = ts.createProject('tsconfig.json');

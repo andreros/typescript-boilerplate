@@ -22,18 +22,18 @@ Documentation for the Typescript Boilerplate project.
 ### 6 - TypeScript Linting and Compiling <a name="typescript">
 
 The TypeScript linter checks the application code for stylistic or programming errors. This 
-check is performed by the `ts:lint` Gulp task. 
+check is performed by the `ts:lint` gulp task. 
 
 ```javascript
 // TypeScript lint task
 
 const gulp = require('gulp'),
-        gulpTslint = require('gulp-tslint'),
-        tslint = require('tslint');
+      gulpTslint = require('gulp-tslint'),
+      tslint = require('tslint');
 
 gulp.task('ts:lint', function () {
     var program = tslint.Linter.createProgram("tsconfig.json");
-    gulp.src([SRC_FOLDER + '/**/*.ts'])
+    return gulp.src([SRC_FOLDER + '/**/*.ts'])
         .pipe(gulpTslint({ program: program, formatter: 'verbose' }))
         .pipe(gulpTslint.report());
 });
