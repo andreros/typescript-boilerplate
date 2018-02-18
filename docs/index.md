@@ -22,7 +22,6 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 ## To Do / Roadmap <a name="roadmap"></a>
 
 1. Create an example page for the project.
-1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
 
 
 ## Creating a TypeScript project from scratch <a name="creating-project"></a>

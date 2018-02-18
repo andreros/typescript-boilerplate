@@ -43,7 +43,7 @@ automatically ran when running any given task.
 | `default`     | `clean`      | This task bundles and runs all tasks associated with the production of the application in a distributable format. This task also starts the application server in development mode. |
 
 
-The following application lists the dependencies involved in each [Gulp](https://gulpjs.com/) task.
+The following table lists the dependencies involved in each [Gulp](https://gulpjs.com/) task.
 
 | Task | Dependencies |
 |:---|:---|

@@ -89,7 +89,7 @@ configuration file in our application root folder, the `tslint.json` file.
 ```
 
 The `tslint.json` is an extensive file, so the previous example shows only a few of the possible configurations
-for demonstration purpose. For a more complete list of Typescript lint rules, please visit 
+for demonstration purposes. For a more complete list of Typescript lint rules, please visit 
 [https://palantir.github.io/tslint/rules/](https://palantir.github.io/tslint/rules/) or the project page
 [https://github.com/palantir/tslint](https://github.com/palantir/tslint).
 

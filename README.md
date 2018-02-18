@@ -43,7 +43,6 @@ browser should open a window with the project running from [http://localhost:300
 ## To Do / Roadmap
 
 1. Create an example page for the project.
-1. (Ongoing task) Documentation: Write a comprehensive documentation of the whole project creation process.
 
 
 ## Contributing
