@@ -25,10 +25,11 @@ The TypeScript linter checks the application code for stylistic or programming e
 check is performed by the `ts:lint` Gulp task. 
 
 ```javascript
-// TypeScript Linter
-    const gulp = require('gulp'),
-          gulpTslint = require('gulp-tslint'),
-          tslint = require('tslint');
+// TypeScript lint task
+
+const gulp = require('gulp'),
+        gulpTslint = require('gulp-tslint'),
+        tslint = require('tslint');
 
 gulp.task('ts:lint', function () {
     var program = tslint.Linter.createProgram("tsconfig.json");
