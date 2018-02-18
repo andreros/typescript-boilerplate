@@ -69,11 +69,11 @@ run the `browserify` gulp task, the `ts:compile` task will be run previously, gu
 `index.js` application entry point javascript file.
 
 The `vinylSourceStream` and `vinylBuffer` dependencies are responsible for dealing with text streams throughout
-the bundling process, as for the `sourcemaps` dependency, it generates sourcemaps for the bundled code, allowing
-the debugging of the uncompressed javascript code inside browsers consoles.
+the bundling process. The `sourcemaps` dependency generates sourcemaps for the bundled code, allowing the 
+debugging of the uncompressed javascript code inside browsers consoles.
 
-The `uglify` dependency is responsible for minfying the bundled javascript code into the smallest size possible
-for faster application loading times in browsers.
+The `uglify` dependency is responsible for minifying the bundled javascript code into the smallest size possible
+for faster application loading time in browsers.
 
 
 ### Next: [8 - CSS Pre-processing](chapter7.html#sass)

@@ -96,7 +96,7 @@ for demonstration purpose. For a more complete list of Typescript lint rules, pl
 #### TypeScript Compiling
 
 The TypeScript compiler converts code written in the TypeScript programming language into plain 100% browser
-compatible and fully interpretable javascript. This process is called transpilation rather than compilation
+compatible and fully interpretable javascript. This process is called transpilation rather than compilation,
 as the code is indeed converted rather than compiled. This process is performed by the `ts:compile` gulp task.
 
 ```javascript
