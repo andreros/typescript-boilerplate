@@ -2,7 +2,9 @@
 
 Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML templating.
 
-<img src="https://raw.githubusercontent.com/andreros/typescript-boilerplate/master/src/assets/img/typescript-boilerplate.png" width="600" align="center">
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/typescript-boilerplate/master/src/assets/img/typescript-boilerplate.png" width="600">
+</p>
 
 
 ## Motivation
