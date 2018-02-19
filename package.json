@@ -1,6 +1,6 @@
 {
     "name": "typescript-boilerplate",
-    "version": "0.0.5",
+    "version": "1.0.0",
     "description": "Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML templating.",
     "main": "index.html",
     "scripts": {

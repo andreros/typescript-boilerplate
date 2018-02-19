@@ -2,6 +2,8 @@
 
 Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML templating.
 
+![](https://guides.github.com/activities/hello-world/branching.png)
+
 
 ## Motivation
 
@@ -38,11 +40,6 @@ browser should open a window with the project running from [http://localhost:300
 *  Browserify modules / dependencies bundler: [http://browserify.org/](http://browserify.org/)
 *  Gulp Task Automator: [https://gulpjs.com/](https://gulpjs.com/)
 *  Browser Sync Server Synchronizing Tool: [https://browsersync.io/](https://browsersync.io/)
-
-
-## To Do / Roadmap
-
-1. Create an example page for the project.
 
 
 ## Contributing
