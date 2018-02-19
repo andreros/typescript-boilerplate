@@ -2,7 +2,7 @@
 
 Boilerplate for a Typescript project with SASS for CSS and Handlebars for HTML templating.
 
-![](https://raw.githubusercontent.com/andreros/typescript-boilerplate/master/src/assets/img/typescript-boilerplate.png =500x)
+<img src="https://raw.githubusercontent.com/andreros/typescript-boilerplate/master/src/assets/img/typescript-boilerplate.png" width="500">
 
 
 ## Motivation
