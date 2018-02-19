@@ -65,5 +65,5 @@ browser should open a window with the project running from [http://localhost:300
 
 ## License
 
-This is free and unencumbered software released into the [public domain](UNLICENSE.txt) license. For more information,
+This is free and unencumbered software released into the [public domain](UNLICENSE.txt). For more information,
 please refer to [http://unlicense.org](http://unlicense.org).
