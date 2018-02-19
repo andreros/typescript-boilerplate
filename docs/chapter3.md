@@ -5,7 +5,6 @@ Documentation for the Typescript Boilerplate project.
 
 ## Table of Contents
 
-*  [To Do / Roadmap](index.md#roadmap)
 *  [Creating a TypeScript project from scratch](index.md#creating-project)
 *  [1 - Project Initial Setup](index.md#initial-setup)
 *  [2 - The First Project File](index.md#first-file)
@@ -72,7 +71,8 @@ Below is a detailed explanation of each file purpose.
 │   │   └── index.ts
 │   ├── index.html
 │   ├── index.scss
-│   └── index.ts
+│   ├── index.ts
+│   └── theme.scss
 ├── .editorconfig
 ├── .gitignore
 ├── CODE_OF_CONDUCT.md
@@ -117,6 +117,7 @@ Below is a detailed explanation of each file purpose.
     * `index.html`: The application main HTML file.
     * `index.scss`: The application main SASS file where all other application SASS files must be included.
     * `index.ts`: The application main typescript file. This file is the entrypoint for the typescript compilation.
+    * `theme.scss`: The application global SASS variables file.
 
 * `.editorconfig`: File containing the editor configuration for text editors or IDEs capable of interpreting this file.
 * `.gitignore`: File containing a set of rules indicating which files should be ignored when commiting or pushing code to a git repository.

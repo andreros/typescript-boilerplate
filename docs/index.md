@@ -1,11 +1,10 @@
 # Documentation
 
-Documentation for the Typescript Boilerplate project. [Documentation markup examples](examples.html).
+Documentation for the Typescript Boilerplate project.
 
 
 ## Table of Contents
 
-*  [To Do / Roadmap](#roadmap)
 *  [Creating a TypeScript project from scratch](#creating-project)
 *  [1 - Project Initial Setup](#initial-setup)
 *  [2 - The First Project File](#first-file)
@@ -17,11 +16,6 @@ Documentation for the Typescript Boilerplate project. [Documentation markup exam
 *  [8 - CSS Pre-processing](chapter7.html#sass)
 *  [9 - HTML Templates Compiling](chapter8.html#handlebars)
 *  [10 - Development Server](chapter9.html#browser-sync)
-
-
-## To Do / Roadmap <a name="roadmap"></a>
-
-1. Create an example page for the project.
 
 
 ## Creating a TypeScript project from scratch <a name="creating-project"></a>
