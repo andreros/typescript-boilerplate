@@ -26,7 +26,7 @@ project from scratch. If you are planning to do so, please take a look at the
 
 Please, read the [Node.js official installation guide](https://github.com/nodejs/node/wiki/Installation).
 
-## [Gulp](https://gulpjs.com/)
+### [Gulp](https://gulpjs.com/)
 
 Gulp uses Node for core processing, npm to manage project dependencies, and gulp.js to run tasks and interface with the core library. Node version 8 or higher suffices. You can follow the directions for installing Node on the Node website if you haven't done so already. Installation of Node will include npm. In order to run this project gulp tasks it is highly recommended that you install gulp globally.
 
