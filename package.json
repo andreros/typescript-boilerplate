@@ -41,6 +41,15 @@
         "handlebars"
     ],
     "author": "André Rosa <andreros@gmail.com>",
-    "contributors": [],
+    "contributors": [
+        {
+            "name": "Hugo Gonçalves",
+            "url": "https://github.com/HugoGon"
+        },
+        {
+            "name": "Miguel Teixeira",
+            "url": "https://github.com/Mteixeira88"
+        }
+    ],
     "license": "Unlicense"
 }

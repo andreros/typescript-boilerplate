@@ -20,6 +20,13 @@ Documentation for the Typescript Boilerplate project.
 
 ### 5 - Gulp Task Automation <a name="task-automation">
 
+**Note:** Before proceeding, it is highly recommended that you install Gulp globally on your system. To do so, please, run the following
+command from the command line:
+
+```sh
+npm install --global gulp-cli
+```
+
 The project uses [Gulp](https://gulpjs.com/) to automate several tasks related to the application. Any of the tasks can be run by simply 
 executing `gulp <TASK_NAME>` in the command line inside the application folder. I.e. `gulp clean` or `gulp serve`.
 
