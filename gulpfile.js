@@ -180,7 +180,7 @@ gulp.task('serve', function () {
                 }
             });
             // listen for changes in the following file types
-            gulp.watch(SRC_FOLDER + '/**/*.ts', ['ts:lint', 'ts:compile']);
+            gulp.watch(SRC_FOLDER + '/**/*.ts', ['ts:lint', 'browserify']);
             gulp.watch(SRC_FOLDER + '/**/*.scss', ['build:scss']);
             gulp.watch(SRC_FOLDER + '/**/*.json', ['build:html']);
             gulp.watch(SRC_FOLDER + '/**/*.hbs', ['build:html']);
