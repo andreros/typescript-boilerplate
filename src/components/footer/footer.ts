@@ -4,4 +4,8 @@ export class Footer {
         // default constructor
     }
 
+    public doSomething(): void {
+        // do something
+    }
+
 }

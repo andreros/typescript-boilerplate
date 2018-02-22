@@ -46,6 +46,7 @@ writing of this documentation.
         "normalize-scss": "^7.0.1",
         "rimraf": "^2.6.2",
         "tslint": "^5.9.1",
+        "tslint-microsoft-contrib": "^5.0.3",
         "typescript": "^2.7.1",
         "vinyl-source-stream": "^2.0.0",
         "vinyl-buffer": "^1.0.1"
@@ -106,11 +107,14 @@ A `rm -rf` util for node.js.
 * `tslint` [https://github.com/palantir/tslint](https://github.com/palantir/tslint):
 An extensible linter for the TypeScript language.
 
+* `tslint-microsoft-contrib` [https://github.com/Microsoft/tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib):
+A set of TSLint rules used on some Microsoft projects.
+
 * `typescript` [https://github.com/Microsoft/TypeScript](https://github.com/Microsoft/TypeScript):
 TypeScript is a superset of JavaScript that compiles to clean JavaScript output.
 
 * `vinyl-source-stream` [https://github.com/hughsk/vinyl-source-stream](https://github.com/hughsk/vinyl-source-stream):
-Use conventional text streams at the start of your gulp or vinyl pipelines 
+Use conventional text streams at the start of your gulp or vinyl pipelines
 
 * `vinyl-buffer` [https://github.com/hughsk/vinyl-buffer](https://github.com/hughsk/vinyl-buffer):
 Convert streaming vinyl files to use buffers.

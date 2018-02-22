@@ -1,6 +1,6 @@
 // Application entry point
-import { Header } from "./components/index";
+import { Header } from './components/index';
 
-let header = new Header("Earthling");
+const header = new Header('Earthling');
 
-console.log("header: ", header);
+console.log('header: ', header);

@@ -7,6 +7,6 @@ export class Header {
     }
 
     public greet() {
-        return "Hello, " + this.greeting;
+        return 'Hello, ' + this.greeting;
     }
 }

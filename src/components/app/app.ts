@@ -4,4 +4,8 @@ export class App {
         // default constructor
     }
 
+    public doSomething(): void {
+        // do something
+    }
+
 }

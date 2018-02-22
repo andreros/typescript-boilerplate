@@ -26,6 +26,7 @@
         "normalize-scss": "^7.0.1",
         "rimraf": "^2.6.2",
         "tslint": "^5.9.1",
+        "tslint-microsoft-contrib": "^5.0.3",
         "typescript": "^2.7.1",
         "vinyl-source-stream": "^2.0.0",
         "vinyl-buffer": "^1.0.1"
