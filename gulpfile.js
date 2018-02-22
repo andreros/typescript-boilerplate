@@ -185,7 +185,7 @@ gulp.task('serve', function () {
             gulp.watch(SRC_FOLDER + '/**/*.json', ['build:html']);
             gulp.watch(SRC_FOLDER + '/**/*.hbs', ['build:html']);
             gulp.watch(SRC_FOLDER + '/**/*.html', ['build:html']);
-            gulp.watch([DIST_FOLDER + '/*.js', DIST_FOLDER + '/*.html', DIST_FOLDER + '/*.css']).on('change', browserSync.reload);
+            gulp.watch([DIST_FOLDER + '/**/*.js', DIST_FOLDER + '/**/*.html', DIST_FOLDER + '/**/*.css']).on('change', browserSync.reload);
         } else {
             // detect specific errors
             switch (err.code) {
